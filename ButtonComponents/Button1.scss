@@ -1,0 +1,29 @@
+
+.btn{
+    color: black;
+    background-color: yellow;
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    .primary{
+       &:hover{
+            color: white;
+            background-color: black;
+        
+        }
+        &:active{
+            color:white;
+            background-color: green;
+        }
+        
+
+    }
+    .disabled{
+        color: rgba(150,149,149,0.26);
+        background-color: rgba(0,0,0,0.12);
+    }
+    
+
+}
+
+
