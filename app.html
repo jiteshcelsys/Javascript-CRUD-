@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #register{
+       margin-left: 400px;
+        }
+        #details {
+            
+        padding: 10px;
+        height: 400px;
+        width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     justify-content: space-around;
+     border-radius: 5px solid red;
+     background-color: aqua;
+     border-radius: 15px;
+  
+  
+   }
+   #UserList{
+    margin-top: 15px;
+    background-color: aqua;
+    border: 1px solid black;
+width: 700px;
+   }
+
+
+
+        /* h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+#details {
+       
+            height: 400px;
+            width: 400px;
+            position: relative;
+            top: 30%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            background-color: aqua;
+        }
+
+        
+
+        #label {
+            display: flex;
+            flex-direction: column;
+            margin-left: 103px;
+            margin-top: 5px;
+            font-size: large;
+            font-weight: 500;
+        }
+
+        input,
+        select {
+            width: 190px;
+        }
+
+        #button {
+            display: flex;
+            flex-direction: row;
+            margin-top: 15px;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px;
+        }
+
+        #details2 {
+            position: absolute;
+            margin-top: 450px;
+            height: 100px;
+            width: 300px;
+            background-color: red;
+
+        }
+
+        #UserList {
+
+            display: inline;
+            flex-direction: column;
+            background-color: rgb(27, 17, 4);
+        }
+
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 500px;
+            margin-top: 20px;
+        }
+
+        td,
+        thead {
+
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            border-radius: 20px, 20px;
+            background-color: rgb(194, 163, 243);
+        }
+
+        tr:nth-child(even) {
+            background-color: #b11919;
+        }
+
+        #operation {
+            width: 600px;
+            border-radius: 50px;
+            height: 100px;
+            margin-top: 30%;
+            margin-left: 5px;
+            display: flex;
+
+
+        } */
+    </style>
+</head>
+
+<body>
+    <diV id="register">
+   
+        <form id="details">
+          
+            <h1>Registration Form</h1>
+            <div id="label">
+                <label>Username</label>
+                <input type="text" name="username" id="UserName" required>
+            </div>
+            <div id="label">
+                <label>Email</label>
+                <input type="email" name="Email" id="EmailId" required>
+            </div>
+            <div id="label">
+                <label>Date of birth</label>
+                <input type="date" name="date" id="Date" required><span></span>
+            </div>
+            <div id="label">
+                <label>Gender</label>
+
+                <select name="Gender" id="Genders" required>
+                    <option value=""> select</option>
+                    <option value="Male"> Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <diV id="label">
+                <label>Highest Qualification</label>
+                <select name="Qualification" id="Qualification" required>
+                    <option value="">select</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="Graduation">Graduation</option>
+                    <option value="Ph.d">Ph.d</option>
+                </select>
+
+            </diV>
+            <div id="label">
+                <label> Profile Photo</label>
+                <input type="file" id="Profile" name="Profile" accept="image/png, image/jpeg">
+            </div>
+
+            <div id="button">
+                <button id="clear">Clear</button>
+                <button id="Submit">Submit</button>
+            </div>
+  
+
+
+    </form>
+</diV>
+    <div id="UserList">
+        <h2>UserList --</h2>
+        <table id="child">
+            <thead>
+                <tr>
+                    <th>S.no</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Opearion</th>
+                </tr>
+            </thead>
+
+            <tbody class="tbody test">
+
+
+            </tbody>
+        </table>
+        <div id="operation">
+            <table>
+                <thead>
+                   <h1>View List</h1>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>DOB</th>
+                        <th>gender</th>
+                        <th>Qualification</th>
+                        <th>profile</th>
+                    </tr>
+                </thead>
+                <tbody id="view">
+                    
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+    <script src="app2.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!-- document.querySelector('.Details').addEventListener('click', function (dataDisplay) {
+
+    dataDisplay.map((value, index) => {
+    var div = document.createElement('div');
+        div.innerHTML = `
+    <h1>${index + 1}</h1>
+    <h1>${value.user}</h1>
+    <h1>${value.email}</h1>
+    <h1>${value.date}</h1>
+    <h1>${value.gender}</h1>
+    <h1>${value.qualification}</h1>
+    <h1>${value.profile}</h1>
+    </div>
+    <div>
+    <button  class="Details" key='${index}'>Details</button>         
+    <button  class="edit">edit</button>
+    <button class="delete">delete</button>
+    
+    
+    `
+child.append(div)
+}) -->
