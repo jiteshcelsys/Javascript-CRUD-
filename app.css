@@ -1,0 +1,71 @@
+body{
+  margin: 0px;
+}
+.parent{
+  width: 100vw;
+  background-color: #86A3B8;
+}
+
+.child{
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.Form{
+  background-color: #E8D2A6;
+  border-radius: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.clear{
+  background-color: #F55050;
+  color: rgb(238, 230, 230);
+  font-size: medium;
+  border-radius: 5px;
+}
+.clear:hover{
+  font-size: larger;
+  color: rgb(15, 14, 14);
+}
+#child{
+  width: 100%;
+  border-collapse: collapse;
+  font-family:sans-serif;
+}
+
+#child tr:hover {background-color:#E8D2A6;}
+#child th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #F48484;
+}
+
+#ViewHead tr:hover{
+  background-color: #b6d120;
+}
+
+#ViewHead{
+  border-collapse: collapse;
+  height: 100px;
+}
+#ViewHead th{
+  padding-top: 12px;
+  width: 100%;
+  padding-left: 10px;
+  font-family:sans-serif;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #F48484;
+
+}
+
+#label{
+  margin: 5px;
+  padding: 5px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+}

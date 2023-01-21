@@ -81,6 +81,7 @@ Submit.addEventListener("click", function (e) {
 
     }
     retrieveFunction();
+    clearData();
 
 });
 function retrieveFunction() {
@@ -117,11 +118,11 @@ function retrieveFunction() {
             tr.append(td);
             tbody.append(tr);//innner
             child.append(tbody)//outer
-
         })
     }
     
 }
+
 function editFunc(e) {
     let matchingKey = e.target.getAttribute('key');
     const localData = JSON.parse(localStorage.getItem('DataInfo'));
@@ -143,9 +144,8 @@ function editFunc(e) {
         localStorage.removeItem('key', index);
     })
     retrieveFunction();
-
-
 }
+
 function viewFunc(e) {
     const tbodyView = document.getElementById('view');
     tbodyView.innerHTML = ``;
@@ -161,18 +161,12 @@ function viewFunc(e) {
 
             tbodyView.appendChild(tr);
         }
-       
     })
-
-
 }
-
 
 function delFunc(e) {
     alert('sure u want to del')
-
     const localData = JSON.parse(localStorage.getItem('DataInfo'));
-
     localData.map((item, index) => {
         localStorage.setItem('DataInfo', JSON.stringify(
             localData.filter((value, Index) => {
@@ -185,30 +179,5 @@ function delFunc(e) {
     retrieveFunction();
     let x=document.getElementById("view");
     x.innerHTML="";
-
+    clearData();
 }
-
-//     const viewList = document.getElementsByClassName('view');
-
-//     for (let i = 0; i < viewList.length; i++) {
-//         viewList[i].addEventListener('click', function (e) {
-//             console.log('view clicked')
-//             let dataDisplay = JSON.parse(localStorage.getItem('DataInfo'));
-//             document.getElementById('view').innerHTML = ""
-//             dataDisplay.map((value, Index) => {
-//                 if (Index == e.target.getAttribute('key')) {
-//                     var tr = document.createElement('tr');
-//                     tr.innerHTML = `<td>${Index + 1}</td>
-//                 <td>${value.user}</td>\
-//                 <td>${value.email}</td>
-//                 <td>${value.Date}</td>
-//                 <td>${value.gender}</td>
-//                 <td>${value.qualification}</td>
-//                 <td>${value.profile}</td>
-//                 `
-//                     document.getElementById('view').appendChild(tr);
-//                 }
-//             })
-//         })
-//     }
-// }
