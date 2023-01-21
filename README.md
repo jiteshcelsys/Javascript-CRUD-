@@ -1,5 +1,5 @@
 
-#  Registration Form(EMP)
+#  Registration Form(Javascript)
 
 In this project , I am storing the data in the locastorage
  and from their i am doing the crud operation
