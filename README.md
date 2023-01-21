@@ -40,6 +40,9 @@ In this project , I am storing the data in the locastorage
 ● Serialisation & Deserialisation
 
 
+![Screenshot (45)](https://user-images.githubusercontent.com/113659313/213865607-722a8de9-7b9c-4bf3-89e0-a992c5fa4cdf.png)
+
+
 ## Acknowledgements
 
 
