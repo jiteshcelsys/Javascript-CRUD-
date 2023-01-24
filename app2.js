@@ -22,9 +22,8 @@ function clearData() {
   Profile.value = "";
 }
 
-addEventListener("DOMContentLoaded", (e) => {
-  e.preventDefault();
-
+const somefunction = () => {
+ 
   Btn.innerHTML = ` <button id="clear" class="clear">Clear</button>
     <button id="Submit" class="clear">Submit</button>`;
   let Submit = document.getElementById("Submit");
@@ -105,7 +104,10 @@ addEventListener("DOMContentLoaded", (e) => {
     retrieveFunction();
     clearData();
   });
-});
+}
+
+addEventListener("DOMContentLoaded", somefunction()
+);
 
 function retrieveFunction() {
   const localData = JSON.parse(localStorage.getItem("DataInfo"));
@@ -120,7 +122,7 @@ function retrieveFunction() {
       const buttonEdit = document.createElement("button");
       buttonDel.innerHTML = "delete";
       buttonView.innerHTML = "View";
-      buttonEdit.innerHTML = "Edit";
+      buttonEdit.innerHTML = "Change";
       buttonDel.setAttribute("key", index);
       buttonView.setAttribute("key", index);
       buttonEdit.setAttribute("key", index);
@@ -145,6 +147,7 @@ function retrieveFunction() {
 }
 
 function editFunc(e) {
+  e.preventDefault();
   Btn.innerHTML = ` <button id="clear" class="clear">Clear</button>
     <button id="Edit" class="clear">Edit</button>`;
   document.getElementById("Edit").addEventListener("click", (e) => {
@@ -176,6 +179,7 @@ function editFunc(e) {
   <button id="Submit" class="clear">Submit</button>`;
     retrieveFunction();
     clearData();
+    somefunction();
   });
   let matchingKey = e.target.getAttribute("key");
   console.log(matchingKey);
