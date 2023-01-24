@@ -1,17 +1,16 @@
 const Btn = document.getElementById("button");
 
-
-let UserName = document.getElementById("UserName");
-let EmailId = document.getElementById("EmailId");
-let Date = document.getElementById("Date");
-let clear = document.getElementById("clear");
-let Submit = document.getElementById("Submit");
-let Genders = document.getElementById("Genders");
-let Qualification = document.getElementById("Qualification");
-let Profile = document.getElementById("Profile");
-let child = document.getElementById("child");
-let UserListDisplay = document.getElementById("UserListDisplay");
-let operation = document.getElementById("operation");
+const UserName = document.getElementById("UserName");
+const EmailId = document.getElementById("EmailId");
+const Date = document.getElementById("Date");
+const clear = document.getElementById("clear");
+const Submit = document.getElementById("Submit");
+const Genders = document.getElementById("Genders");
+const Qualification = document.getElementById("Qualification");
+const Profile = document.getElementById("Profile");
+const child = document.getElementById("child");
+const UserListDisplay = document.getElementById("UserListDisplay");
+const operation = document.getElementById("operation");
 document.addEventListener("DOMContentLoaded", retrieveFunction);
 clear.addEventListener("click", clearData);
 function clearData() {
@@ -28,84 +27,84 @@ addEventListener("DOMContentLoaded", (e) => {
 
   Btn.innerHTML = ` <button id="clear" class="clear">Clear</button>
     <button id="Submit" class="clear">Submit</button>`;
-    let Submit = document.getElementById("Submit");
+  let Submit = document.getElementById("Submit");
 
-    Submit.addEventListener("click", function (e) {
-      e.preventDefault();
-    
-      let user = UserName.value;
-      let email = EmailId.value;
-      let date = Date.value;
-      let gender = Genders.value;
-      let qualification = Qualification.value;
-      let profile = Profile.value;
-      let jsonObject = {};
-      let regxEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      let regexUser = /^[A-Za-z]+$/;
-    
-      if (
-        user === "" ||
-        email === "" ||
-        date === "" ||
-        gender === "" ||
-        qualification === "" ||
-        profile === ""
-      ) {
-        alert("fill all the details ");
-        return;
-      }
-      if (!regxEmail.test(email) || !regexUser.test(user)) {
-        alert("incorectly Written");
-        return;
-      }
-      if (
-        user != "" &&
-        email != "" &&
-        date != "" &&
-        gender != "" &&
-        qualification != "" &&
-        profile != ""
-      ) {
-        jsonObject.user = user;
-        jsonObject.email = email;
-        jsonObject.gender = gender;
-        jsonObject.qualification = qualification;
-        jsonObject.profile = profile;
-        jsonObject.date = date;
-        let userData = [];
-        const removeItemm = localStorage.getItem("DataInfo");
-        console.log(removeItemm);
-        const localStorageData =
-          localStorage.getItem("DataInfo") &&
-          JSON.parse(localStorage.getItem("DataInfo"));
-        console.log(localStorageData);
-        if (!localStorageData) {
-          userData.push(jsonObject);
-          alert("Data submitted successfully");
-    
-          localStorage.setItem("DataInfo", JSON.stringify(userData));
-        } else {
-          let isUniqueEmail = true;
-          userData = [...localStorageData];
-          for (let i = 0, l = localStorageData.length; i < l; i = i + 1) {
-            if (localStorageData?.[i]?.email === email) {
-              isUniqueEmail = false;
-              alert("email is  in use");
-              return;
-            }
-          }
-    
-          if (isUniqueEmail) {
-            alert("Data submitted successfully");
-            userData.push(jsonObject);
-            console.log(userData);
-            localStorage.setItem("DataInfo", JSON.stringify(userData));
+  Submit.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    let user = UserName.value;
+    let email = EmailId.value;
+    let date = Date.value;
+    let gender = Genders.value;
+    let qualification = Qualification.value;
+    let profile = Profile.value;
+    let jsonObject = {};
+    let regxEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let regexUser = /^[A-Za-z]+$/;
+
+    if (
+      user === "" ||
+      email === "" ||
+      date === "" ||
+      gender === "" ||
+      qualification === "" ||
+      profile === ""
+    ) {
+      alert("fill all the details ");
+      return;
+    }
+    if (!regxEmail.test(email) || !regexUser.test(user)) {
+      alert("incorectly Written");
+      return;
+    }
+    if (
+      user != "" &&
+      email != "" &&
+      date != "" &&
+      gender != "" &&
+      qualification != "" &&
+      profile != ""
+    ) {
+      jsonObject.user = user;
+      jsonObject.email = email;
+      jsonObject.gender = gender;
+      jsonObject.qualification = qualification;
+      jsonObject.profile = profile;
+      jsonObject.date = date;
+      let userData = [];
+      const removeItemm = localStorage.getItem("DataInfo");
+      console.log(removeItemm);
+      const localStorageData =
+        localStorage.getItem("DataInfo") &&
+        JSON.parse(localStorage.getItem("DataInfo"));
+      console.log(localStorageData);
+      if (!localStorageData) {
+        userData.push(jsonObject);
+        alert("Data submitted successfully");
+
+        localStorage.setItem("DataInfo", JSON.stringify(userData));
+      } else {
+        let isUniqueEmail = true;
+        userData = [...localStorageData];
+        for (let i = 0, l = localStorageData.length; i < l; i = i + 1) {
+          if (localStorageData?.[i]?.email === email) {
+            isUniqueEmail = false;
+            alert("email is  in use");
+            return;
           }
         }
+
+        if (isUniqueEmail) {
+          alert("Data submitted successfully");
+          userData.push(jsonObject);
+          console.log(userData);
+          localStorage.setItem("DataInfo", JSON.stringify(userData));
+        }
       }
-      retrieveFunction();
-      clearData();
-    });
+    }
+    retrieveFunction();
+    clearData();
+  });
 });
 
 function retrieveFunction() {
@@ -114,8 +113,7 @@ function retrieveFunction() {
   const tbody = document.querySelector(".tbody");
   tbody.innerHTML = "";
   console.log(localData);
-  if (localData)
-  {
+  if (localData) {
     localData.map((item, index) => {
       const buttonDel = document.createElement("button");
       const buttonView = document.createElement("button");
@@ -168,17 +166,16 @@ function editFunc(e) {
     };
     console.log(localData);
     const ingg = localData.findIndex((x) => {
-        console.log(x.email == jsonObject.email)
+      console.log(x.email == jsonObject.email);
       return x.email === jsonObject.email;
     });
     console.log(ingg);
     localData[ingg] = jsonObject;
-    localStorage.setItem('DataInfo', JSON.stringify(localData));
-  Btn.innerHTML = ` <button id="clear" class="clear">Clear</button>
+    localStorage.setItem("DataInfo", JSON.stringify(localData));
+    Btn.innerHTML = ` <button id="clear" class="clear">Clear</button>
   <button id="Submit" class="clear">Submit</button>`;
     retrieveFunction();
     clearData();
-
   });
   let matchingKey = e.target.getAttribute("key");
   console.log(matchingKey);
