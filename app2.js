@@ -122,7 +122,7 @@ function retrieveFunction() {
       const buttonEdit = document.createElement("button");
       buttonDel.innerHTML = "delete";
       buttonView.innerHTML = "View";
-      buttonEdit.innerHTML = "Change";
+      buttonEdit.innerHTML = "edit";
       buttonDel.setAttribute("key", index);
       buttonView.setAttribute("key", index);
       buttonEdit.setAttribute("key", index);
@@ -149,8 +149,8 @@ function retrieveFunction() {
 function editFunc(e) {
   e.preventDefault();
   Btn.innerHTML = ` <button id="clear" class="clear">Clear</button>
-    <button id="Edit" class="clear">Edit</button>`;
-  document.getElementById("Edit").addEventListener("click", (e) => {
+    <button id="Editted" class="clear">Editted</button>`;
+  document.getElementById("Editted").addEventListener("click", (e) => {
     e.preventDefault();
     const localData = JSON.parse(localStorage.getItem("DataInfo"));
     let user = UserName.value;
